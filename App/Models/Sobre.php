@@ -12,7 +12,7 @@ class Sobre{
 
     public function getInfo(){
 
-        $query = "SELECT valores FROM tb_info";
+        $query = "SELECT titulo, descricao FROM tb_info";
 
         return $this->connection->query($query)->fetchAll();
     }

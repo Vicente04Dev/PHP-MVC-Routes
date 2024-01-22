@@ -7,7 +7,7 @@ class Connection{
     public static function getConnection(){
 
         try{
-            $pdo = new \PDO("mysql:host=localhost;dbname=mvc;charset=tf8",
+            $pdo = new \PDO("mysql:host=localhost;dbname=mvc;charset=utf8",
             "root", "");
 
             return $pdo;

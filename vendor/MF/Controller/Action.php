@@ -4,7 +4,7 @@ namespace MF\Controller;
 
 abstract class Action{
 
-    private $view;
+    protected $view;
     public function __construct(){
         $this->view = new \stdClass();
     }
@@ -12,8 +12,8 @@ abstract class Action{
     protected function render($view, $layout){
         $this->view->page = $view;
 
-        if(file_exists(".../App/Views/$layout.phtml")){
-            require_once ".../App/Views/$layout.phtml";
+        if(file_exists("../App/Views/$layout.phtml")){
+            require_once "../App/Views/$layout.phtml";
 
         }else{
             $this->content();
@@ -26,6 +26,6 @@ abstract class Action{
         $classAtual = str_replace("App\\Controllers", "", $classAtual);
         $classAtual = str_replace("Controller", "", $classAtual);
 
-        require_once(".../App/Views/$classAtual/".$this->view->page.".phtml");
+        require_once("../App/Views/$classAtual/".$this->view->page.".phtml");
     }
 }

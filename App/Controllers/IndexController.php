@@ -16,9 +16,9 @@ class IndexController extends Action{
 
     public function sobreNos(){
         
-        $produto = Container::getModel("Produto");
+        $produto = Container::getModel("Sobre");
 
-        $this->view->dados = $produto->getProdutos();
+        $this->view->dados = $produto->getInfo();
 
         $this->render("sobreNos", "Layout.phtml");
     }

@@ -11,7 +11,7 @@ class Produto{
 
     public function getProdutos(){
 
-        $query = "SELECT * FROM tb_produtos";
+        $query = "SELECT id, descricao, preco FROM tb_produtos";
 
         return $this->connection->query($query)->fetchAll();
     }
