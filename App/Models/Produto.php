@@ -10,8 +10,8 @@ class Produto{
     }
 
     public function getProdutos(){
-        
-        $query = "SELECT * FROM produtos";
+
+        $query = "SELECT * FROM tb_produtos";
 
         return $this->connection->query($query)->fetchAll();
     }

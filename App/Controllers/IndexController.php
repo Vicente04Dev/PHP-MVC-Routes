@@ -1,15 +1,26 @@
 <?php
 
 namespace App\Controllers;
+use MF\Model\Container;
+use MF\Controller\Action;
 
-class IndexController{
+class IndexController extends Action{
 
     public function index(){
-        echo "<h1>Olá, estou na Home</h1>";
+        $produto = Container::getModel("Produto");
+
+        $this->view->dados = $produto->getProdutos();
+
+        $this->render("index", "Layout.phtml");
     }
 
     public function sobreNos(){
-        echo "<h1>Olá, estou na Sobre Nós</h1>";
+        
+        $produto = Container::getModel("Produto");
+
+        $this->view->dados = $produto->getProdutos();
+
+        $this->render("sobreNos", "Layout.phtml");
     }
 
     public function contacto(){
